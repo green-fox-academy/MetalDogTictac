@@ -1,0 +1,33 @@
+.main-title {
+  font-family: Georgia;
+  font-size: 50px;
+  color: rgb(50, 143, 143);
+  background-color: rgb(40, 40, 87);
+  border: 2px pink solid;
+  padding-left: 10%;
+}
+
+.text-field {
+  color: grey;
+}
+
+.content {
+  padding-left: 10%;
+  padding-top: 3%;
+  padding-right: 10%;
+  font-family: Georgia;
+  color: black;
+  margin: auto;
+  background-image: url(./pexels-photo-531880.jpeg);
+}
+
+.button {
+  color: orangered;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.post {
+  border: 2px solid black;
+  padding: 2%;
+}

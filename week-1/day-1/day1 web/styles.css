@@ -1,0 +1,71 @@
+#fullstack {
+    color: #ff0099;
+    font-size: 35px;
+}
+
+h1 {
+    font-family: Merriweather, serif;
+    font-size: 80px;
+}
+
+p {
+    font-family: consolas;
+}
+
+h2 {
+    font-family: Merriweather;
+}
+
+.wiki {
+    font-size: bold;
+}
+
+nav {
+    background-color: #333333;
+    margin: 0%;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 10%;
+    overflow: hidden;
+    background-color: #333333;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: #ff0099;
+    text-align: center;
+    padding: 20px 20px;
+    font-family: consolas;
+  }
+
+.logo {
+    float: left;
+    padding-left: 10%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    background-image: url("./assets/topography/topography/topography.png")
+}
+
+.dashes {
+    text-align: center;
+}
+
+.tech {
+    font-weight: bold;
+    text-align: center;
+}
+
+.content {
+    padding: 5% 10%;
+}
