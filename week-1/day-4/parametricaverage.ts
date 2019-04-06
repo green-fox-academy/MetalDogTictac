@@ -13,36 +13,8 @@ for (let i: number = 1; i <= x; i++) {
    sum = sum + i;
 }
 
-console.log(sum);
+console.log('Sum is: ' + sum);
 
 let average: number = sum / x;
 
-console.log(average);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* var given_number: number = 4;
-
-var sum: number = 0;
-for (var i = 1; i <= given_number; i++) {
-    sum = sum + i;
-}
-
-console.log("\nSum:",sum);
-
-var average: number = sum / (i-1)
-console.log("Average: ",average, "\n"); */
+console.log('Average is: ' + average);
