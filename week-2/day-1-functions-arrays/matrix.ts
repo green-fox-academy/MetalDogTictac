@@ -12,24 +12,24 @@
 //
 // * size should depend on a variable
 
-let matrix2: number [][] = [];
-let matrixSize = 4;
+let newMatrix: number[][] = [];
+let matrixLines: number = 5;
 
-for (let i = 0; i < matrixSize; i++) {
-  matrix2.push([]);
-  for (let j = 0; j < matrixSize; j++) {
-      if (j === matrixSize-i-1) {
-        matrix2[i].push(1);
-      }
-      else {
-        matrix2[i].push(0);
-      }
+for (let i: number = 0; i < matrixLines; i++) {
+  newMatrix.push([]);
+  for (let j: number = 0; j < matrixLines; j++) {
+    if (j === matrixLines - 1 - i) {
+      newMatrix[i].push(1);
+    } else {
+      newMatrix[i].push(0);
+    }
+  }
 }
-console.log(matrix2[i]);
-}
+
+console.log(newMatrix);
 
 //Peter's solution
-
+/* 
 function createMatrix(size: number): void {
   const matrix: number[][] = []; // first level
 
@@ -44,4 +44,4 @@ function createMatrix(size: number): void {
   }
 }
 
-createMatrix(4);
+createMatrix(4); */
