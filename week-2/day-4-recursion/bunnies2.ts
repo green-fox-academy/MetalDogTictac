@@ -8,8 +8,6 @@
 function bunnyEarCounter(numberOfBunnies: number) {
   if (numberOfBunnies <= 0) {
     return 0;
-  } else if (numberOfBunnies === 1) {
-    return 2;
   } else if (numberOfBunnies % 2 === 0) {
     return 3 + bunnyEarCounter(numberOfBunnies - 1);
   } else if (numberOfBunnies % 2 !== 0) {
