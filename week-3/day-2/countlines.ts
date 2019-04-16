@@ -6,6 +6,7 @@
 // should not raise any error.
 
 const fs = require("fs");
+export {};
 
 function countTheLines(fileName: string) {
   try {
