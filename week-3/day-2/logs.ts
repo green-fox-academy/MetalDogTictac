@@ -1,5 +1,7 @@
 'use strict';
 
+//UNFINISHED YET
+
 // Read all data from 'log.txt'.
 // Each line represents a log message from a web server
 // Write a function that returns an array with the unique IP adresses.
@@ -32,5 +34,5 @@ function countTheLines(fileName: string) {
 countTheLines("logs.txt");
 
 function getRatio(fileName: string) {
-  
+
 }
