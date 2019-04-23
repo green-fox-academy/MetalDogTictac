@@ -41,21 +41,23 @@ class Garden {
   checkWaterLevel(): void {
     for (let i: number = 0; i < this.flowers.length; i++) {
       if (this.flowers[i].waterLevel < 5) {
-        console.log('The ' + this.flowers[i].color + ' Flower needs water.');
+        console.log("The " + this.flowers[i].color + " Flower needs water.");
       } else {
-        console.log('The ' + this.flowers[i].color + ' Flower doesn\'t need water.');
+        console.log(
+          "The " + this.flowers[i].color + " Flower doesn't need water."
+        );
       }
     }
 
     for (let j: number = 0; j < this.trees.length; j++) {
       if (this.trees[j].waterLevel < 10) {
-        console.log('The ' + this.trees[j].color + ' Tree needs water.');
+        console.log("The " + this.trees[j].color + " Tree needs water.");
       } else {
-        console.log('The ' + this.trees[j].color + ' Tree doesn\'t need water.');
-      }
+        console.log("The " + this.trees[j].color + " Tree doesn't need water.");
       }
     }
   }
+}
 
 const flower1 = new Flower("yellow", 4);
 const flower2 = new Flower("blue", 4);
@@ -68,6 +70,12 @@ garden1.addFlower(flower2);
 garden1.addTree(tree1);
 garden1.addTree(tree2);
 
+garden1.checkWaterLevel() + "\n";
+
+console.log("Watering with 40:");
+garden1.startWatering(40);
+garden1.checkWaterLevel() + "\n";
+
+console.log("Watering with 70:");
+garden1.startWatering(70);
 garden1.checkWaterLevel();
-
-

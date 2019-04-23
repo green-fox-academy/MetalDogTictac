@@ -24,6 +24,3 @@ export class Tree extends Plant {
     }
   }
 }
-
-const purpleTree = new Tree("purple", 4);
-const orangeTree = new Tree("orange", 20);

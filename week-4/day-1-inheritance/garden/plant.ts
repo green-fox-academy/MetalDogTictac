@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 export class Plant {
   color: string;
@@ -11,7 +11,7 @@ export class Plant {
     this.waterIntake = newWaterIntake;
   }
 
-  giveWater(newWaterAmount: number) {
+  watering(newWaterAmount: number) {
     this.waterLevel = newWaterAmount * this.waterIntake;
   }
 }
