@@ -17,11 +17,7 @@ function isAnagram(word1, word2): boolean {
     .sort()
     .join("");
 
-  if (word1 === word2) {
-    return true;
-  } else {
-    return false;
-  }
+  return word1 === word2;
 }
 
 console.log(isAnagram("joe", "lil"));
