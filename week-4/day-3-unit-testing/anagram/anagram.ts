@@ -20,4 +20,6 @@ function isAnagram(word1, word2): boolean {
   return word1 === word2;
 }
 
-console.log(isAnagram("joe", "lil"));
+console.log(isAnagram("joe", "jeo"));
+
+export { isAnagram };
