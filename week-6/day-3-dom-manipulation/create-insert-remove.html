@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM: Create, Insert, Remove</title>
+  </head>
+  <body>
+    <ul class="asteroids">
+      <li class="asteroid">The King</li>
+      <li class="asteroid b326">The Conceited Man</li>
+      <li class="asteroid b328">The Businessman</li>
+      <li class="asteroid b329">The Lamplighter</li>
+    </ul>
+
+    <script>
+      "use strict";
+      var asteroidList = document.querySelector("ul.asteroids"); //save all asteroids into asteroidlist
+      var newAsteroid = document.createElement("li"); //create a new li element
+      newAsteroid.id = "b555"; //the new id for it
+      newAsteroid.textContent = "The Green Fox"; //the new text content for it
+      asteroidList.appendChild(newAsteroid); //add the new asteroid to the asteroidlist
+      var businessAsteroid = document.querySelector(".b328"); //take the b328 asteroid and save it in a var
+      asteroidList.removeChild(businessAsteroid); //remove the b328 business asteroid
+    </script>
+  </body>
+</html>
