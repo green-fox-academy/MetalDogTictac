@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: CreateElement</title>
+    <style>
+      div#pets {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pets"></div>
+
+    <script>
+      const kids = [
+        { petName: "Wattled crane", owner: "Bryant" },
+        { petName: "Devil, tasmanian", owner: "Alejandro" },
+        { petName: "Mynah, common", owner: "Nelie" },
+        { petName: "Dolphin, common", owner: "Mariele" },
+        { petName: "Gray duiker", owner: "Maddalena" },
+        { petName: "Crab (unidentified)", owner: "Lucine" },
+        { petName: "Ant (unidentified)", owner: "Lorianna" },
+        { petName: "Bison, american", owner: "Tommie" },
+        { petName: "Yellow mongoose", owner: "Vivyan" },
+        { petName: "Carpet snake", owner: "Veda" },
+        { petName: "Lesser mouse lemur", owner: "Isidor" }
+      ];
+
+      //Create an <article> element for each kid
+      //Create a <h3> and a <p> element for each article and append them as a child to the <article>
+          //- The H3 should contain the owner's name
+          //- The p should contain the pet's name
+      //Add the article to the pets div.
+
+      for (let i = 0; i < kids.length; i++) {
+        let createArticles = document.createElement("article");  //create the new bunch of articles
+        createArticles.appendChild(document.createElement("h3")).innerText = //add the owner's names to each new article
+          kids[i].owner;
+        createArticles.appendChild(document.createElement("p")).innerText = //add the pets' names to each new article
+          kids[i].petName;
+        document.getElementById("pets").appendChild(createArticles); //take the div where we want to add all this and add the bunch of new articles
+      }
+    </script>
+  </body>
+</html>
