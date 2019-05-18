@@ -27,21 +27,30 @@
     <script>
       //If the fourth p has a 'dolphin' class, replace apple's content with 'pear'
 
-      'use strict';
+      "use strict";
 
       //If we get all p elements by their tag name and the index of the desired element is the last one in the given array, get its class, and once you get it and it is apple, then rename it to pear
 
-      if(document.getElementsByTagName('p')[document.getElementsByTagName('p').length-1].getAttribute('class')){
-        document.getElementsByClassName('apple')[0].innerHTML = 'pear';
+      if (
+        document
+          .getElementsByTagName("p")
+          [document.getElementsByTagName("p").length - 1].getAttribute("class")
+      ) {
+        document.getElementsByClassName("apple")[0].innerHTML = "pear";
       }
 
       //If the first p has an 'apple' class, replace cat's content with 'dog'
+      if (document.getElementsByTagName("p")[0].innerHTML === "apple") {
+        document.getElementsByClassName("cat")[0].innerHTML = "dog";
+      }
+
+      //If you check the first p and the content is apple, rewrite the cat's content to dog
 
       //Make apple red by adding a .red class
+      document.getElementsByClassName("apple")[0].setAttribute("class", "red");
+      //Take all classes with apple name, and add to the first one's an attribute of .red class
 
       //Make balloon less balloon-like (change its shape)
     </script>
   </body>
 </html>
-
-
