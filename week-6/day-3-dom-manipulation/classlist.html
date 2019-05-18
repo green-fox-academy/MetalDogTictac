@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM: ClassList</title>
+  </head>
+  <body>
+    <div class="asteroid b325">an asteroid</div>  //this is the piece of data we work with
+
+    <script>
+      "use strict";
+      var asteroid = document.querySelector("div");
+
+      console.log(asteroid.classList.value); //returns asteroid b325
+
+      console.log("asteroid?", asteroid.classList.contains("asteroid")); //is asteroid present in the class/object? true
+
+      console.log("planet?", asteroid.classList.contains("planet")); //is planet present in the class/object? false
+
+      asteroid.classList.add("new-class"); //add new class to the classlist
+
+      asteroid.classList.remove("asteroid"); //remove asteroid 
+      console.log("still asteroid?", asteroid.classList.contains("asteroid"));
+    </script>
+  </body>
+</html>
