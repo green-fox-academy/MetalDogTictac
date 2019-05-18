@@ -1,11 +1,20 @@
-//Create a function that takes a list and a value, and returns the index of that value in the list. If the value is not it the list, the function should return -1.
+"use strict";
 
-function returnIndex (newList: number[], newValue: number) {
-
-    let searchValue = newList.indexOf(newValue);
-
-    return searchValue;
+function returnIndex(inputArray: any, searchValue: any): any {
+  let outputArray: number[] = [];
+  if (typeof inputArray !== "object" && inputArray.constructor !== Array) {
+    return "Please input an array";
+  } else {
+    for (let i: number = 0; i < inputArray.length; i++) {
+      if (inputArray[i] === searchValue) {
+        outputArray.push(i);
+      }
+    }
+    if (outputArray[0] === undefined) {
+      outputArray.push(-1);
+    }
+    return outputArray;
+  }
 }
 
-console.log(returnIndex([1, 3, 5], 5));
-
+export { returnIndex };
