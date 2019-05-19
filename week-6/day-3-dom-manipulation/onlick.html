@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Workshop: onclick</title>
     <style>
       body {
@@ -20,20 +20,20 @@
       <button>Party</button>
     </div>
 
-    
     <script>
       //Turn the party on and off by clicking the button. (the whole page)
-        'use strict';
+      "use strict";
 
-        var button = document.querySelector('button');
+      var button = document.querySelector("button");
 
-        button.onclick = () => {
+      button.onclick = () => {
+        let findBody = document.getElementsByTagName("body")[0];
+        let isThereAClass = document.getAttribute("class");
 
-        }
-
-
-
+        if (isThereAClass) {
+          body.removeAttribute("class");
+        } else body.setAttribute("class", "party");
+      };
     </script>
-    
   </body>
 </html>
