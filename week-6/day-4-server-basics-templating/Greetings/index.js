@@ -8,7 +8,7 @@ app.set("view engine", "ejs");
 // home page
 app.get("/", (req, res) => {
   // render `home.ejs`
-  let guestName = 'req.query.name';
+  let guestName = req.query.name;
   if (!guestName) {
     guestName = "Guest";
   }
