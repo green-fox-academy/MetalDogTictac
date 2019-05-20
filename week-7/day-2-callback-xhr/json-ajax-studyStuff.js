@@ -7,6 +7,10 @@ var btn = document.getElementById("btn"); //save the button in a var
 btn.addEventListener("click", function() {
   var ourRequest = new XMLHttpRequest(); //the AJAX call to run new data runs as soon as the page loads
 
+  ourRequest.onerror = function() { //what shall happen when the connection fails
+    console.log("connection error");
+  }
+
   ourRequest.open(
     //get data from the desired url
     "GET",
@@ -16,8 +20,13 @@ btn.addEventListener("click", function() {
   );
 
   ourRequest.onload = function() {
-    var ourData = JSON.parse(ourRequest.responseText); //the content in the url will be passed as json filter
-    renderHTML(ourData);
+    if (ourRequest.status >= 200 && ourRequest.status < 400) {  //implementing basic error handling for AJAX
+        var ourData = JSON.parse(ourRequest.responseText); //the content in the url will be passed as json filter
+        renderHTML(ourData);
+    } else {
+        console.log('We connected to the server but it returned an error');
+    }
+    
   };
 
   ourRequest.send();
