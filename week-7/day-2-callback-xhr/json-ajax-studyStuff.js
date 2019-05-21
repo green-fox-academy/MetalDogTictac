@@ -21,7 +21,7 @@ btn.addEventListener("click", function() {
 
   ourRequest.onload = function() {
     if (ourRequest.status >= 200 && ourRequest.status < 400) {  //implementing basic error handling for AJAX
-        var ourData = JSON.parse(ourRequest.responseText); //the content in the url will be passed as json filter
+        var ourData = JSON.parse(ourRequest.responseText); //the content in the url will be passed as json object
         renderHTML(ourData);
     } else {
         console.log('We connected to the server but it returned an error');

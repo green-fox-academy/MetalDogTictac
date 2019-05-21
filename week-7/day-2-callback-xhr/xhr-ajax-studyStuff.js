@@ -11,7 +11,11 @@ window.onload = function() {
 
     //open method sets up the type of request, where we want to get the data from, and if its asynchronous or not (boolean)
     http.open('GET', 'data/tweets.json', true); //keep this true - asynchronous
-    http.send();
+    http.setRequestHeader('accept', 'application/json'); //sets the header, that completes the open request 
+    http.send(); //sends the data after open/setrequestheader is set
+    http.onload = data =>  {  //loads the incoming data
+        console.log(data);
+    };
     
     //JQUERY METHOD
     $.get('data/tweets.json', function(data){

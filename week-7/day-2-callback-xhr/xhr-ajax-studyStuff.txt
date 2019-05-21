@@ -1,0 +1,50 @@
+Origins of AJAX
+-asynchronous javascript and xml
+
+Fetch is a new API that makes ‘Fetch’ing remote resources much easier. Like XMLHttpRequest, Fetch can be used for making requests same origin or cross domain requests. Fetch uses a cleaner, more powerful API that separates the request from the response and uses a promise to return the response.
+
+
+
+XMLHttpRequest
+-communicate with a server by making a http request
+-no need to reload the page
+
+
+request methods
+.open
+.send
+.setRequestHeader
+.onreadystatechange
+.onload
+
+
+status codes | status cats
+.readyState
+.response
+
+
+Blocking / non-blocking
+
+
+Callbacks
+
+
+XML
+
+
+JSON
+
+
+API-s
+-messenger that takes requests and tells the system what to do and delivers response back
+-runs back and forth between applications, databases and devices
+
+
+
+API keys
+
+
+Fetch API
+
+
+Cross origin
