@@ -6,7 +6,7 @@ const httpRequest = new XMLHttpRequest();
 
 //httpRequest.onreadystatechange = console.log;
 
-httpRequest.open("GET", "http://localhost:3000/getbooktitles");
+httpRequest.open("GET", "http://localhost:3000/allbookinfo");
 
 //console.log(data.target.response);
 
