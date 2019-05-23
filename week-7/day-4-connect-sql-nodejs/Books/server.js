@@ -32,10 +32,10 @@ mySQLConn.connect(err => {
 bookApp.use(express.static("static"));
 
 //first connection to index.html
-/* bookApp.get('/', (req, res) => {
+bookApp.get('/', (req, res) => {
     //endpoint with its path
-    res.sendFile(path.join(__dirname, './index.html'));
-  }) */
+    res.sendFile(path.join(__dirname + '/index.html')); //check this line tomorrow
+  })
 
 //select all book titles
 bookApp.get("/getbooktitles", (req, res) => {
