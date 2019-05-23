@@ -50,13 +50,18 @@ bookApp.get("/getbooktitles", (req, res) => {
   });
 });
 
-bookApp.post("/addsong", (req, res) => {
-  mySQLConn.query("INSERT INTO songs(title, singer, url) VALUES(?,?,?)", [
-    req.body.title,
-    req.body.singer,
-    req.body.url
-  ]);
-  res.redirect("/");
+bookApp.get("/allbookinfo", (req, res) => {
+  mySQLConn.query(
+    `SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast LEFT JOIN author ON book_mast.aut.id = author.aut_id LEFT JOIN publisher ON book_mast.pub_id = publisher.pub_id LEFT JOIN category on book_mast.cate_id = category.cate_id`,
+    (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      }
+      res.send(rows);
+    }
+  );
 });
 
 bookApp.listen(PORT, () => {
