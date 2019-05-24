@@ -12,45 +12,48 @@ httpRequest.onload = data => {
   let bookTitles = JSON.parse(data.target.response);
 
   for (let i = 0; i < bookTitles.length; i++) {
-    let ul = document.createElement("li");
-
-    document.getElementsByClassName("book-container")[0].appendChild(ul).innerText =
-      bookTitles[i].book_name;
+    let newElement = document.createElement("li");
+    newElement.innerText = bookTitles[i].book_name;
+    document.getElementsByClassName("book-container")[0].appendChild(newElement);
   }
-}
+};
 httpRequest.send();
 
 
 
-//httpRequest.open("GET", "http://localhost:3000/allbookinfo");
+const httpChannelForAllBooks = new XMLHttpRequest();
+httpChannelForAllBooks.open('GET', 'http://localhost:3000/allbooks');
 
-//console.log(data.target.response);
+httpChannelForAllBooks.onload = (data) => { 
 
-/* httpRequest.onload = () => {
-  let allData = JSON.parse(httpRequest.responseText);
-  let newTableBody = document.querySelector("tablebody");
+    let data1 = JSON.parse(httpChannelForAllBooks.responseText);
 
-  for (let i = 0; i < allData.length; i++) {
-    let newTableRow = document.createElement("tr");
-    let newBookTitle = document.createElement("td");
-    let newAuthor = document.createElement("td");
-    let newCategory = document.createElement("td");
-    let newPublisher = document.createElement("td");
-    let newBookPrice = document.createElement("td");
-    newBookTitle.innerHTML = allData[i].book_name;
-    newAuthor.innerHTML = allData[i].aut_name;
-    newCategory.innerHTML = allData[i].cate_descrip;
-    newCategory.className = "category";
-    newPublisher.innerHTML = allData[i].pub_name;
-    newPublisher.className = "publisher";
-    newBookPrice.innerHTML = allData[i].book_price;
-    newBookPrice.className = " price";
-    newTableBody.appendChild(newTableRow).appendChild(newBookTitle);
-    newTableBody.appendChild(newTableRow).appendChild(newAuthor);
-    newTableBody.appendChild(newTableRow).appendChild(newCategory);
-    newTableBody.appendChild(newTableRow).appendChild(newPublisher);
-    newTableBody.appendChild(newTableRow).appendChild(newBookPrice);
-  }
-};
+    for (let i = 0; i < data1.length; i++) {
+      let table = document.getElementById("tablecontent");
 
-httpRequest.send(); */
+      let line = document.createElement("tr");
+
+      let bookName = document.createElement("td");
+      bookName.innerText = data1[i].book_name;
+
+      let authorName = document.createElement("td");
+      authorName.innerText = data1[i].aut_name;
+
+      let publisherName = document.createElement("td");
+      publisherName.innerText = data1[i].pub_name;
+
+      let bookCategory = document.createElement("td");
+      bookCategory.innerText = data1[i].cate_descrip;
+
+      let bookPrice = document.createElement("td");
+      bookPrice.innerText = data1[i].book_price + "$";
+
+      line.appendChild(bookName);
+      line.appendChild(authorName);
+      line.appendChild(publisherName);
+      line.appendChild(bookCategory);
+      line.appendChild(bookPrice);
+      table.appendChild(line);
+    }
+  };
+httpChannelForAllBooks.send(data);
