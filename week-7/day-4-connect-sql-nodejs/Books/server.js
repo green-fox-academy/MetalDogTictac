@@ -8,9 +8,7 @@ const path = require("path");
 const table = "book_mast";
 
 bookApp.use(express.json());
-//bookApp.use(bodyParser.urlencoded({ extended: false }));
 
-// create connection
 const mySQLConn = mysql.createConnection({
   host: "localhost",
   user: "lili",
@@ -20,7 +18,6 @@ const mySQLConn = mysql.createConnection({
 //if this error: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
 //run: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
 
-//connect
 mySQLConn.connect(err => {
   if (err) {
     console.log(err.toString());
@@ -29,12 +26,10 @@ mySQLConn.connect(err => {
   console.log("connection to DB is OK ✨");
 });
 
-bookApp.use(express.static(path.join(__dirname, "/static"))); //check this tomorrow
+bookApp.use(express.static(path.join(__dirname, "/static")));
 
-//first connection to index.html
 bookApp.get("/", (req, res) => {
-  //endpoint with its path
-  res.sendFile("/index.html"); //check this line tomorrow
+  res.sendFile("/index.html");
 });
 
 //select all book titles
@@ -50,6 +45,7 @@ bookApp.get("/getbooktitles", (req, res) => {
   });
 });
 
+//select all info about the books, joining the various tables
 bookApp.get("/allbooks", (req, res) => {
   mySQLConn.query(
     `SELECT book_mast.book_name, book_mast.book_price, author.aut_name, category.cate_descrip, publisher.pub_name FROM ${table} 
