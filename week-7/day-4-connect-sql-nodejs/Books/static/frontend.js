@@ -6,11 +6,27 @@ const httpRequest = new XMLHttpRequest();
 
 //httpRequest.onreadystatechange = console.log;
 
-httpRequest.open("GET", "http://localhost:3000/allbookinfo");
+httpRequest.open("GET", "http://localhost:3000/getbooktitles");
+
+httpRequest.onload = data => {
+  let bookTitles = JSON.parse(data.target.response);
+
+  for (let i = 0; i < bookTitles.length; i++) {
+    let ul = document.createElement("li");
+
+    document.getElementsByClassName("book-container")[0].appendChild(ul).innerText =
+      bookTitles[i].book_name;
+  }
+}
+httpRequest.send();
+
+
+
+//httpRequest.open("GET", "http://localhost:3000/allbookinfo");
 
 //console.log(data.target.response);
 
-httpRequest.onload = () => {
+/* httpRequest.onload = () => {
   let allData = JSON.parse(httpRequest.responseText);
   let newTableBody = document.querySelector("tablebody");
 
@@ -37,4 +53,4 @@ httpRequest.onload = () => {
   }
 };
 
-httpRequest.send();
+httpRequest.send(); */
