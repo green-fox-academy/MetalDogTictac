@@ -36,6 +36,7 @@ btn.addEventListener("click", function() {
   }
 });
 
+
 function renderHTML(data) {
   //function's job is to add html to the page
 
