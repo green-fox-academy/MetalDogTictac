@@ -29,13 +29,13 @@ mySQLConn.connect(err => {
   console.log("connection to DB is OK ✨");
 });
 
-bookApp.use(express.static("static"));
+bookApp.use(express.static(path.join(__dirname, "/static"))); //check this tomorrow
 
 //first connection to index.html
-bookApp.get('/', (req, res) => {
-    //endpoint with its path
-    res.sendFile(path.join(__dirname + '/index.html')); //check this line tomorrow
-  })
+bookApp.get("/", (req, res) => {
+  //endpoint with its path
+  res.sendFile("/index.html"); //check this line tomorrow
+});
 
 //select all book titles
 bookApp.get("/getbooktitles", (req, res) => {
@@ -50,9 +50,13 @@ bookApp.get("/getbooktitles", (req, res) => {
   });
 });
 
-bookApp.get("/allbookinfo", (req, res) => {
+bookApp.get("/allbooks", (req, res) => {
   mySQLConn.query(
-    `SELECT * FROM ${table};`, (err, rows) => {
+    `SELECT book_mast.book_name, book_mast.book_price, author.aut_name, category.cate_descrip, publisher.pub_name FROM ${table} 
+  LEFT JOIN author ON book_mast.aut_id = author.aut_id 
+  LEFT JOIN category ON book_mast.cate_id = category.cate_id 
+  LEFT JOIN publisher ON publisher.pub_id = book_mast.pub_id;`,
+    (err, rows) => {
       if (err) {
         console.log(err);
         res.status(500).send();
