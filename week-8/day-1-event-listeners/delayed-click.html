@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: EventListeners</title>
+  </head>
+  <body>
+    <button>ZzZzZ</button>
+
+    <script>
+      function message(textUnderButton) {
+        const body = document.querySelector("body");
+        const newParagraph = document.createElement("p");
+
+        newParagraph.innerText = textUnderButton;
+        body.appendChild(newParagraph);
+      }
+
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        setTimeout(() => message("2 seconds ellapsed"), 2000);
+      });
+    </script>
+  </body>
+</html>
