@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link href="buttondisable.css" rel="stylesheet" type="text/css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700&display=swap');
+      </style>
+  </head>
+  <body>
+        
+    <form>
+       <!-- What is your favourite pet -->
+      <p>What is your favourite pet?</p>
+      <input type="radio" id="dog" name="pet"/>
+      <label for="dog">Dog</label><br/>
+
+      <input type="radio" id="cat" name="pet"/>
+      <label for="cat">Cat</label><br/>
+
+      <input type="radio" id="fish" name="pet"/>
+      <label for="fish">Victor the Goldfish</label>
+
+      <!-- Signing up for cat facts -->
+      <p>Do you want to sign up for cat facts?</p>
+      <input type="radio" id="yes" name="answer" />
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="answer" />
+      <label for="no">No</label></br>
+
+      <!-- Two buttons -->
+      <button id="ilovecats" disabled>I love cats</button>
+      <button id="signup" disabled>Sign up</button>
+
+      <div id="message-field"></div>
+
+    </form>
+    <script src="buttondisable.js"></script>
+  </body>
+</html>

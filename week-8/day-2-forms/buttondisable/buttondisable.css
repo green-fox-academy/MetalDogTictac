@@ -1,0 +1,22 @@
+p {
+    font-family: 'PT Serif', serif;
+    font-size: 36px;
+}
+
+input[type="radio"] {
+    font-family: 'PT Serif', serif;
+    font-size: 14px;
+}
+
+button {
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5px;
+    background-color: lightgreen;
+    color: black;
+    }
+
+button:hover {
+    opacity: 0.5;
+}
+
