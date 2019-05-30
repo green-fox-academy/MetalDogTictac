@@ -15,12 +15,10 @@ let messageField = document.querySelector("#message-field");
 
 allInputFields.forEach(element => {
   element.addEventListener("click", function() {
-    if (dog.checked || cat.checked) {
+    if ((dog.checked || cat.checked) || (fish.checked && no.checked)) {
       signUpButton.removeAttribute("disabled");
     } else if (yes.checked) {
       iLoveCatsButton.removeAttribute("disabled");
-    } else if (fish.checked && no.checked) {
-      signUpButton.removeAttribute("disabled");
     }
   });
 });
