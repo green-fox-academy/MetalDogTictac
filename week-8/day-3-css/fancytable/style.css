@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap");
+
+body {
+  display: flex;
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#main-container {
+  display: flex;
+  margin-top: 70px;
+  border-collapse: collapse;
+  font-family: Raleway;
+  font-size: 50px;
+  height: 100vh;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+#header {
+  background-color: black;
+  color: darkslategrey;
+  border-bottom: 4px darkslategrey solid;
+  border-radius: 5px 5px;
+}
+
+tr {
+  color: darkslategrey;
+}
+
+td {
+  padding: 15px;
+}
+
+.months,
+.sums {
+  width: 450px;
+}
+
+.months {
+  border-right: 2px solid darkslategrey;
+}
+
+.sums:before {
+  content: "$ ";
+}
